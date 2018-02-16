@@ -6,7 +6,6 @@
 </div>
 <div class="row">
 <div class="col-lg-6 col-xs-12 offset-3">
-{{--prueba para github--}}
 
     {!!Form::open(array('url'=>'roles','method'=>'POST','autocomplete'=>'off'))!!}
     {{Form::token()}}
