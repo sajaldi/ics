@@ -127,23 +127,6 @@ role="dialog" tabindex="1" id="modal-create-tarjeta">
       </div>
         </div>
 
-    {{--  <div class="row">
-      <div class="col-lg-10 offset-1">
-        <div class="color-etiquetas text-center">
-          <p>SOLUCION IMPLEMENTADA</p>
-          </div>
-        </div>
-        </div>
-
-        <div class="row">
-        <div class="col-lg-8 col-xs-12">
-          <div class="form-group">
-            <textarea name="solucion_implementada" rows="4" cols="60"></textarea>
-          </div>
-          </div>
-          </div>
-          --}}
-
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar</button>

@@ -61,8 +61,9 @@ class TarjetasController extends Controller
       $tarjetas->turno=$request->get('turno');
       $tarjetas->causa_id=$request->get('causa_id');
       $tarjetas->status='enviada';
-      $tarjetas->empleado_asignado=(4);
-      $tarjetas->empleado_finaliza=(4);
+      $tarjetas->empleado_asignado=(1);
+      $tarjetas->empleado_finaliza=(1);
+      
       //$tarjetas->fecha_cierre=$request->get('fecha_cierre');
       //$tarjetas->finalizado=$request->get('cerrado');
 
