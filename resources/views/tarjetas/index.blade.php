@@ -8,7 +8,7 @@
 
 
 <div class="col-lg-3">
-  <a href=""data-target="#modal-create-tarjeta" data-toggle="modal"> <button class="btn btn-danger">Nueva</button></a>
+  <a href=""data-target="#modal-create-tarjeta" data-toggle="modal"> <button class="btn btn-info">Nueva</button></a>
 </div>
 
 
