@@ -31,7 +31,7 @@
           <td>{{$evento->nombre}}</td>
           <td>
 
-            <div class="hidden-sm hidden-xs action-buttons">
+            <div class="action-buttons">
               <a class="blue" href="#">
                 <i class="ace-icon fa fa-search-plus bigger-200"></i>
               </a>
@@ -39,10 +39,12 @@
               <a class="green" href="{{URL::action('EventosController@edit',$evento->id)}}">
                 <i class="ace-icon fa fa-pencil bigger-200"></i>
               </a>
-
+              @can('borrar')
               <a class="red" href=""data-target="#modal-delete-{{$evento->id}}" data-toggle="modal">
                 <i class="ace-icon fa fa-trash-o bigger-200"></i>
               </a>
+              @else
+              @endcan
             </div>
           </td>
         </tr>
@@ -63,7 +65,7 @@
     $('#table-enventos')
     //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
     .dataTable( {
-    
+
 
       //,
       //"sScrollY": "200px",

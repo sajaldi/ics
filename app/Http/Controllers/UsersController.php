@@ -7,6 +7,8 @@ use App\PuestosModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UsersController extends Controller
 {
@@ -17,19 +19,30 @@ use RegistersUsers;
   public function __construct()
   {
       $this->middleware('auth');
-      //$this->middleware(['role:administrador']);
-      //$this->middleware(['role:Administrador','permission:publish articles|edit articles']);
   }
-
 
 
     public function index(Request $request)
     {
-      //$roles = $user->getRoleNames(); // Returns a collection
-       //dd($$roles);
       $users=User::All();
-      //dd($users);
       return view('users.index',compact('users'));
+    }
+
+    public function roles(Request $request){
+      //funciones para crear roles y permisos
+      /*$role = Role::create(['name' => 'writer']);
+      $permission = Permission::create(['name' => 'edit articles']);*/
+      $role=Role::findOrFail(1);
+      //dd($role);
+      $permission=Permission::findOrFail(2);
+      $user=User::findOrFail(4);
+      //dd($user);
+      //$user->assignRole($role);
+    //  $user->hasRole($role);
+      //$user->hasAnyRole(Role::all());
+    //  dd($user);
+      //$role->givePermissionTo($permission);
+    //  $permission->assignRole($role);
     }
 
 

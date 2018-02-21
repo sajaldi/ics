@@ -1,31 +1,14 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//Route::get('/', function () {
-  // return view('layouts.admin');
-//});
 // rutas de tipo resource usados para manejar los crud de todas las tablas
 Route::resource('equipos', 'EquiposController');
 Route::resource('categorias', 'CategoriasController');
 
-Route::group(['middleware' => ['role:super-admin|Administrador']], function () {
-
-});
-
+//Route::group(['middleware' => ['role:Administrador']], function () {});
+Route::resource('areas', 'AreasController');
 
 Route::resource('users', 'UsersController');
 Route::resource('roles', 'RolesController');
-Route::resource('areas', 'AreasController');
+//Route::resource('areas', 'AreasController');
 Route::resource('eventos', 'EventosController');
 Route::resource('causas', 'CausasController');
 Route::resource('plantas', 'PlantasController');
@@ -50,3 +33,4 @@ Route::get('/area/{id}/equipos','EquiposController@equipos_areas');
 // rutas para cargar las tarjetas creadas y asignadas a un usuario
 Route::get('/mis-tarjetas', 'TarjetasController@mis_tarjetas');
 Route::get('/tarjetas-asignadas', 'TarjetasController@tarjetas_asignadas');
+Route::get('/roles', 'UsersController@roles');

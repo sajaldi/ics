@@ -30,7 +30,7 @@
           <td>{{$causa->id}}</td>
           <td>{{$causa->nombre}}</td>
           <td>
-            <div class="hidden-sm hidden-xs action-buttons">
+            <div class="action-buttons">
               <a class="blue" href="#">
                 <i class="ace-icon fa fa-search-plus bigger-200"></i>
               </a>
@@ -38,10 +38,12 @@
               <a class="green" href="{{URL::action('CausasController@edit',$causa->id)}}">
                 <i class="ace-icon fa fa-pencil bigger-200"></i>
               </a>
-
+              @can('borrar')
               <a class="red" href="" data-target="#modal-delete-{{$causa->id}}" data-toggle="modal">
                 <i class="ace-icon fa fa-trash-o bigger-200"></i>
               </a>
+              @else
+              @endcan
             </div>
 
           </td>

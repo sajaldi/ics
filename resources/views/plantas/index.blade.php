@@ -33,10 +33,12 @@
               <a class="green" href="{{URL::action('PlantasController@edit',$plant->id)}}">
                 <i class="ace-icon fa fa-pencil bigger-200"></i>
               </a>
-
+              @can('borrar')
               <a class="red" href="" data-target="#modal-delete-{{$plant->id}}" data-toggle="modal">
                 <i class="ace-icon fa fa-trash-o bigger-200"></i>
               </a>
+              @else
+              @endcan
             </div>
           </td>
         </tr>
@@ -58,7 +60,7 @@
     $('#table-plantas')
     //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
     .dataTable( {
-    
+
 
       //,
       //"sScrollY": "200px",

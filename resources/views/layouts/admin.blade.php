@@ -389,15 +389,15 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="/empleados">
+								<a href="/users">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Lista de Empleados
+									Lista de Usuarios
 								</a>
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="/empleados/create">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Crear Nuevo Empleado
 								</a>

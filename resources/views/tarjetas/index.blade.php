@@ -66,19 +66,18 @@
           <td><span class="label label-sm label-success">{{$t->status}}</span>
           </td>
           <td>
-            <div class="hidden-sm hidden-xs action-buttons">
+            <div class="action-buttons">
               <a class="blue" href="{{URL::action('TarjetasController@show',$t->id)}}">
                 <i class="ace-icon fa fa-eye bigger-200"></i>
               </a>
               <a class="green" href="#">
                 <i class="ace-icon fa fa-pencil bigger-200"></i>
               </a>
-              @can('borrar_tarjetas')
+              @can('borrar')
               <a class="red" href="" data-target="#modal-delete-{{$t->id}}" data-toggle="modal">
                 <i class="ace-icon fa fa-trash-o bigger-200"></i>
               </a>
               @else
-              <h3>Usted no puede eliminar esta nota</h3>
               @endcan
 
             </div>

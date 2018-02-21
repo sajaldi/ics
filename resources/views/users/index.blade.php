@@ -36,8 +36,11 @@
           <td>{{$u->puesto->nombre}}</td>
 
           <td>
+            @can('borrar')
             <a href="{{URL::action('UsersController@edit',$u->id)}}"> <button class="btn btn-info">Editar</button></a>
               <a href=""data-target="#modal-delete-{{$u->id}}" data-toggle="modal"> <button class="btn btn-danger">Eliminar</button></a>
+              @else
+              @endcan
           </td>
         </tr>
         @include('users.modal')
