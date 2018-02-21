@@ -57,7 +57,7 @@
           <td><span class="label label-sm label-success">{{$t->status}}</span>
           </td>
           <td>
-            <div class="hidden-sm hidden-xs action-buttons">
+            <div class="action-buttons">
               <a class="blue" href="{{URL::action('TarjetasController@show',$t->id)}}">
                 <i class="ace-icon fa fa-eye bigger-200"></i>
               </a>
