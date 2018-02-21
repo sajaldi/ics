@@ -14,13 +14,13 @@
 
 <div class="row">
 <div class="col-xs-12">
-  <h3 class="header smaller lighter blue">Listado de Tarjetas Realizadas</h3>
+  <h3 class="header smaller lighter blue">Listado de Todas las Tarjetas Realizadas</h3>
   <div class="clearfix">
     <div class="pull-right tableTools-container"></div>
   </div>
 
   <div class="table-header">
-    Listado de tarjetas realizadas"
+    Listado de todas las tarjetas"
   </div>
 <div class="table-responsive">
 

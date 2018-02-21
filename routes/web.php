@@ -24,7 +24,8 @@ Route::post('/finalizar/{idtarjeta}','TarjetasController@finalizar');
 //ruta para las autentificaciones
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'TarjetasController@mis_tarjetas');
+//Route::get('/', 'HomeController@index')->name('home');
 Route::get('/reportes/{id}/','TarjetasController@pdf');
 //Route::get('reporte', 'RolesController@pdf');//->name('roles.pdf');
 //ruta para las peticiones ajax
