@@ -8,14 +8,23 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Tarjetas') }}</title>
+    <title>Digital</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
   <body>
+    <style media="screen">
+      .logo { padding: 5px; margin: 30px; border: 0px solid black; float: right; width: 100px; }
+      .logo2 { position:relative; top: 140px; left: 15px; float: left; width: 450px; }
+      body {
+		background-color: white;
+	     }
+    </style>
+<div class="row">
+  <img class="logo" src="images/logo.png" id="logo">
+</div>
+
     <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-     <img src="images/logo 1.png"></div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -84,7 +93,8 @@
         </div>
 
     </div>
-      <img src="images/1.jpg">
-
+    <div class="img-fluid row">
+      <img class="logo2" src="images/1.jpg">
+    </div>
   </body>
 </html>

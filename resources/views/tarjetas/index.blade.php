@@ -5,7 +5,7 @@
 .color-etiquetas{ background-color:green;}
 </style>
 
-
+<br>
 
 <div class="col-lg-3">
   <a href=""data-target="#modal-create-tarjeta" data-toggle="modal"> <button class="btn btn-info">Nueva</button></a>
@@ -14,7 +14,7 @@
 
 <div class="row">
 <div class="col-xs-12">
-  <h3 class="header smaller lighter blue">Listado de Todas las Tarjetas Realizadas</h3>
+  <h3 class="header smaller lighter blue">Listado de Todas las Tarjetas</h3>
   <div class="clearfix">
     <div class="pull-right tableTools-container"></div>
   </div>
