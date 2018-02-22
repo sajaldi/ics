@@ -6,27 +6,51 @@ use App\RolesModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Barryvdh\DomPDF\Facade as PDF;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use App\User;
 
 
 class RolesController extends Controller
 {
 
-//  public function __construct()
-  //{
-    //  $this->middleware('auth');
-  //}
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
 
     public function index(Request $request)
     {
-      $roles=RolesModel::All();
-      return view('roles.index',compact('roles'));
+      $roles=Role::All();
+      $usuarios=User::All();
+      $permisos=Permission::All();
+
+      return view('roles.index',compact('roles','usuarios','permisos'));
+    }
+
+
+    public function roles(Request $request){
+      //funciones para crear roles y permisos
+      /*$role = Role::create(['name' => 'writer']);
+      $permission = Permission::create(['name' => 'edit articles']);*/
+      $role=Role::findOrFail(1);
+      //dd($role);
+      $permission=Permission::findOrFail(2);
+      $user=User::findOrFail(4);
+      //dd($user);
+      //$user->assignRole($role);
+    //  $user->hasRole($role);
+      //$user->hasAnyRole(Role::all());
+    //  dd($user);
+      //$role->givePermissionTo($permission);
+    //  $permission->assignRole($role);
     }
 
 
 
     public function create()
     {
-            return view('roles.create');
+    return view('roles.create');
     }
 
 

@@ -12,6 +12,7 @@ use App\CategoriasModel;
 use App\CausasModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+Use Session;
 use Auth;
 
 
@@ -118,6 +119,11 @@ public function asignar(Request $request,$id)
 public function finalizar(Request $request,$id)
 {
   $tarjeta=TarjetasModel::findOrFail($id);
+  if ($tarjeta->finalizado==1){
+    Session::flash('message','Esta tarjeta ya fue finalizada');
+    return Redirect::to('tarjetas');
+    }
+    else{
   $tarjeta->user_finaliza=$request->get('user_finaliza');
   $tarjeta->solucion_implementada=$request->get('solucion');
   $tarjeta->status='Finalizada';
@@ -125,6 +131,7 @@ public function finalizar(Request $request,$id)
   $tarjeta->fecha_cierre= new \DateTime();
   $tarjeta->update();
   return Redirect::to('tarjetas');
+}
 }
 
 

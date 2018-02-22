@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('contenido')
+<br>
 
 <div class="row">
 <div class="col-lg-6 col-xs-12">
@@ -7,12 +8,12 @@
 </div>
 </div>
 
-<div class="card mb-3">
-  <div class="card-header">
-    <i class="fa fa-table"></i> Listado de Roles</div>
-    <div class="card-body">
+<br>
+
+<div class="row">
+    <div class="col-lg-5">
     <div class="table-responsive">
-      <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered text-center table-striped table-hover">
         <thead>
           <th>Id</th>
           <th>Nombre</th>
@@ -22,7 +23,7 @@
         @foreach ($roles as $rol)
         <tr>
           <td>{{$rol->id}}</td>
-          <td>{{$rol->nombre}}</td>
+          <td>{{$rol->name}}</td>
           <td>
             <a href="{{URL::action('RolesController@edit',$rol->id)}}"> <button class="btn btn-info">Editar</button></a>
               <a href=""data-target="#modal-delete-{{$rol->id}}" data-toggle="modal"> <button class="btn btn-danger">Eliminar</button></a>

@@ -28,23 +28,7 @@ use RegistersUsers;
       return view('users.index',compact('users'));
     }
 
-    public function roles(Request $request){
-      //funciones para crear roles y permisos
-      /*$role = Role::create(['name' => 'writer']);
-      $permission = Permission::create(['name' => 'edit articles']);*/
-      $role=Role::findOrFail(1);
-      //dd($role);
-      $permission=Permission::findOrFail(2);
-      $user=User::findOrFail(4);
-      //dd($user);
-      //$user->assignRole($role);
-    //  $user->hasRole($role);
-      //$user->hasAnyRole(Role::all());
-    //  dd($user);
-      //$role->givePermissionTo($permission);
-    //  $permission->assignRole($role);
-    }
-
+  
 
     public function create()
     {

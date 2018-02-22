@@ -118,9 +118,7 @@
 							.logoU { position:relative top: 5px; left: 10px; padding: 5px; float:none; width: 95px; }
 						</style>
 
-
-
-							<img class="logoU" src="images/logo.png" id="logo">
+							<img class="logoU" src="{{asset('images/logo.png')}}" id="logo">
 					</div>
 				</div><!-- /.sidebar-shortcuts -->
 

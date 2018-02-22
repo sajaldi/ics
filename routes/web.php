@@ -34,4 +34,4 @@ Route::get('/area/{id}/equipos','EquiposController@equipos_areas');
 // rutas para cargar las tarjetas creadas y asignadas a un usuario
 Route::get('/mis-tarjetas', 'TarjetasController@mis_tarjetas');
 Route::get('/tarjetas-asignadas', 'TarjetasController@tarjetas_asignadas');
-Route::get('/roles', 'UsersController@roles');
+//Route::get('/roles', 'RolesController@roles');

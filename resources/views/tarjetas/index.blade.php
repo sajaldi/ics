@@ -10,7 +10,14 @@
 <div class="col-lg-3">
   <a href=""data-target="#modal-create-tarjeta" data-toggle="modal"> <button class="btn btn-info">Nueva</button></a>
 </div>
-
+<div class="col-lg-4">
+@if(Session::has('message'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  {{Session::get('message')}}
+</div>
+@endif
+</div>
 
 <div class="row">
 <div class="col-xs-12">
@@ -41,7 +48,6 @@
           {{--<th>Solucion</th>
           <th>Fecha cierre</th>--}}
           <th>Finalizado</th>
-          <th>Estatus</th>
           <th>Opciones</th>
         </thead>
 
@@ -62,7 +68,6 @@
           <td>{{$t->descripcion_reporte}}</td>
           {{--<td>{{$t->solucion_implementada}}</td>
           <td>{{$t->fecha_cierre}}</td>--}}
-          <td>{{$t->finalizado}}</td>
           <td><span class="label label-sm label-success">{{$t->status}}</span>
           </td>
           <td>

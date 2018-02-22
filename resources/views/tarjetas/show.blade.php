@@ -28,10 +28,10 @@
         <h5><strong>Realizada por: </strong>{{$tarjetas->terminado->name}} </h5>
       </div>
 
-      <div class="col-lg-3 col-xs-12">
+      <div class="col-lg-5 col-xs-12">
 <a href=""data-target="#modal-asignar" data-toggle="modal"> <button class="btn btn-info">Reasignar</button></a>
 <a href=""data-target="#modal-finalizar" data-toggle="modal"> <button class="btn btn-info">Finalizar</button></a>
-
+<a href="/tarjetas"> <button class="btn btn-info">Regresar</button></a>
       </div>
     </div>
 </div>
@@ -107,7 +107,7 @@
             <div class="col-lg-10">
               <label for="nombre">Empleado Finaliza</label>
               <select class="form-control" id="select-empleado" name="user_finaliza" class="form-control">
-                <option value="">Seleccione Empleado</option>
+                <option value="{{Auth::user()->id}}">{{Auth::user()->name}}</option>
                 @foreach($user as $u)
                 <option value="{{$u->id}}">{{$u->name}}</option>
                 @endforeach
@@ -128,7 +128,7 @@
         <div class="modal-footer no-margin-top">
           <button type="submit" class="btn btn-sm btn-success pull-left">
             <i class="ace-icon fa fa-check"></i>
-            Asignar
+            Finalizar
           </button>
           <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
             <i class="ace-icon fa fa-times"></i>
