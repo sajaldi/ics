@@ -134,7 +134,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-tag"></i>
+							<i class="menu-icon fa fa-tags"></i>
 							<span class="menu-text">
 								Tarjetas
 							</span>
@@ -204,7 +204,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<i class="menu-icon fa fa-gavel"></i>
 							<span class="menu-text"> Equipos </span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -250,7 +250,7 @@
 							</li>
 
 							<li class="">
-								<a href="/categoria/create">
+								<a href="/categorias/create">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Crear una Categoria
 								</a>
@@ -261,7 +261,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
+							<i class="menu-icon fa fa-th"></i>
 							<span class="menu-text">Eventos</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -318,7 +318,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
+							<i class="menu-icon fa fa-tasks"></i>
 							<span class="menu-text">Plantas</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -347,7 +347,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
+							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text">Empleados</span>
 
 							<b class="arrow fa fa-angle-down"></b>
