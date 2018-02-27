@@ -49,6 +49,12 @@ class RolesController extends Controller
     }
 
 
+public function asignar_permiso(Request $request,$rol,$permiso){
+
+      $rol->givePermissionTo($permiso);
+}
+
+
 
     public function create()
     {

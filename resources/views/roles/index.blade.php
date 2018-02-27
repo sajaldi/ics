@@ -9,8 +9,48 @@
 
 <br>
 <div class="container">
+
+  {{--{{Form::open(array('action'=>array('RolesController@asignar_permiso'),'method'=>'post'))}}
+  {{Form::token()}}--}}
+  <div class="row">
+    <div class="col-lg-3">
+  <div class="form-group">
+    <label for="nombre">Roles</label>
+    <select class="form-control" id="select-planta" required name="planta_id" class="form-control">
+      <option value="">Seleccione un Rol</option>
+      @foreach($roles as $r)
+      <option value="{{$r->id}}">{{$r->name}}</option>
+      @endforeach
+    </select>
+  </div>
+  </div>
+
+  <div class="col-lg-2">
+  <h4>Asignar Permiso:</h4>
+  </div>
+
+  <div class="col-lg-3">
+  <div class="form-group">
+  <label for="nombre">Permisos</label>
+  <select class="form-control" id="select-planta" required name="planta_id" class="form-control">
+    <option value="">Seleccione un Permiso</option>
+    @foreach($permisos as $per)
+    <option value="{{$per->id}}">{{$per->name}}</option>
+    @endforeach
+  </select>
+  </div>
+  </div>
+
+  <button type="submit" class="btn btn-sm btn-info">
+    <i class="ace-icon fa fa-check"></i>
+    Asignar
+    </button>
+  </div>
+{{--{{Form::Close()}}--}}
+
+
 <div class="row">
-    <div class="col-lg-5 offset-lg-0">
+    <div class="col-lg-5">
       <div class="table-header">
         Lista de Roles
       </div>
