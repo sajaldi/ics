@@ -50,7 +50,7 @@
 					<a href="/" class="navbar-brand">
 						<small>
 							<i class="fa fa"></i>
-							Sistema de Tarjetas Unilever
+							Sistema de Tarjetas Unilever Comayagua
 						</small>
 					</a>
 				</div>
@@ -427,7 +427,7 @@
 					<div class="footer-content">
 						<span class="bigger-120">
 							<span class="blue bolder"></span>
-							Copyright ©  2018
+							Copyright ©   2018
 						</span>
 
 						&nbsp; &nbsp;
@@ -467,7 +467,6 @@
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>-->
-
 
 		<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 		<script src="{{asset('assets/js/jquery-ui.custom.min.js')}}"></script>

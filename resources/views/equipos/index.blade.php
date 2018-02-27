@@ -26,6 +26,7 @@
           <th>Id</th>
           <th>Nombre</th>
           <th>Area</th>
+          <th>Padre</th>
           <th>Opciones</th>
         </thead>
 
@@ -34,7 +35,10 @@
           <td>{{$equipo->id}}</td>
           <td>{{$equipo->nombre}}</td>
           <td>{{$equipo->area->nombre}}</td>
-
+        <td>  @if ($equipo->padre==1)
+          <i class="ace-icon fa fa-check bigger-200"></i>
+        </td>
+          @endif
           <td>
             <div class="action-buttons">
               <a class="blue" href="#">

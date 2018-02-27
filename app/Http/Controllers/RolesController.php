@@ -14,6 +14,7 @@ use App\User;
 class RolesController extends Controller
 {
 
+
   public function __construct()
   {
       $this->middleware('auth');
@@ -29,14 +30,15 @@ class RolesController extends Controller
     }
 
 
-    public function roles(Request $request){
+    public function create_permission(Request $request){
       //funciones para crear roles y permisos
-      /*$role = Role::create(['name' => 'writer']);
-      $permission = Permission::create(['name' => 'edit articles']);*/
-      $role=Role::findOrFail(1);
+      //$role = Role::create(['name' =>$request['rol']]);
+      $permission = Permission::create(['name' => $request['permiso']]);
+      return Redirect::to('roles');
+      //$role=Role::findOrFail(1);
       //dd($role);
-      $permission=Permission::findOrFail(2);
-      $user=User::findOrFail(4);
+    //  $permission=Permission::findOrFail(2);
+    //  $user=User::findOrFail(4);
       //dd($user);
       //$user->assignRole($role);
     //  $user->hasRole($role);
@@ -50,15 +52,13 @@ class RolesController extends Controller
 
     public function create()
     {
-    return view('roles.create');
+
     }
 
 
     public function store(Request $request)
     {
-      $roles=new RolesModel;
-      $roles->Nombre=$request->get('rol');
-      $roles->save();
+      $role = Role::create(['name' =>$request['rol']]);
       return Redirect::to('roles');
     }
 
@@ -86,8 +86,17 @@ class RolesController extends Controller
 
     public function destroy($id)
     {
-      $roles=RolesModel::findOrFail($id);
+      $roles=Role::findOrFail($id);
       $roles->Delete();
+      //Post::destroy($id);
+      Return Redirect::to('roles');
+    }
+
+
+    public function delete_permission($id)
+    {
+      $permiso=Permission::findOrFail($id);
+      $permiso->Delete();
       //Post::destroy($id);
       Return Redirect::to('roles');
     }

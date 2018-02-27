@@ -41,6 +41,7 @@ class AreasController extends Controller
       $areas=new AreasModel;
       $areas->nombre=$request->get('areas');
       $areas->planta_id=$request->get('planta_id');
+      $areas->subArea=$request->get('subArea');
       $areas->save();
       return Redirect::to('areas');
     }

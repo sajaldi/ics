@@ -26,11 +26,19 @@
 
     <div class="form-group">
       <label for="nombre">Planta</label>
-      <select class="form-control" name="planta_id" class="form-control" placeholder="Planta..." required>
+      <select class="form-control" name="planta_id" id="select-planta" class="form-control" placeholder="Planta..." required>
         <option value="">Seleccione Planta</option>
         @foreach($plantas as $p)
         <option value="{{$p->id}}">{{$p->nombre}}</option>
        @endforeach
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Sub Area</label>
+      <select class="form-control" name="subArea" class="form-control" id="select-area">
+
+
       </select>
     </div>
 
@@ -42,4 +50,8 @@
     {!!Form::close()!!}
 </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{asset('js/combox.js')}}"></script>
 @endsection

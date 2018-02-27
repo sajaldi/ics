@@ -1,5 +1,5 @@
-<div class="modal fade" aria-hidden="true" role="dialog"  id="modal-delete-{{$rol->id}}">
-  {{Form::open(array('action'=>array('RolesController@destroy',$rol->id),'method'=>'delete'))}}
+<div class="modal fade" aria-hidden="true" role="dialog"  id="modal-delete-permission-{{$p->id}}">
+  {{Form::open(array('action'=>array('RolesController@delete_permission',$p->id),'method'=>'delete'))}}
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header no-padding">
@@ -7,12 +7,12 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
               <span class="white">&times;</span>
             </button>
-            Borrar roles
+            Borrar Permisos
           </div>
 
         </div>
         <div class="modal-body">
-          <p>Desea eliminar rol: <b>{{$rol->name}}</b>?</p>
+          <p>Desea eliminar el permiso: <b>{{$p->name}}</b>?</p>
         </div>
 
         <div class="modal-footer no-margin-top">

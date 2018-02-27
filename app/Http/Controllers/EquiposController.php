@@ -12,19 +12,22 @@ use Illuminate\Support\Facades\Redirect;
 class EquiposController extends Controller
 {
 
-  //public function __construct()
-  //{
-    //  $this->middleware('auth');
-//  }
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
 
+// funcion para cargar los equipos por medio de las areas, peticion ajax desde jquery
 public function equipos_areas($id)
 {
   return EquiposModel::where('area_id',$id)->get();
 }
 
-public function equipos_padres($id,$padre)
+// funcion para llamar a los equipos padres
+
+public function equipos_padres($id)
 {
-  return EquiposModel::where('area_id',$id)->where('padre',$padre)->get();
+  return EquiposModel::where('area_id',$id)->where('padre',1)->get();
 }
 
   public function index(Request $request)

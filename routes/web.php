@@ -25,12 +25,17 @@ Route::post('/finalizar/{idtarjeta}','TarjetasController@finalizar');
 Auth::routes();
 
 Route::get('/', 'TarjetasController@mis_tarjetas');
+
+//rutas para los permisos
+Route::post('/permisos', 'RolesController@create_permission');
+Route::delete('/permisos-borrar/{id}/', 'RolesController@delete_permission');
 //Route::get('/', 'HomeController@index')->name('home');
 Route::get('/reportes/{id}/','TarjetasController@pdf');
 //Route::get('reporte', 'RolesController@pdf');//->name('roles.pdf');
 //ruta para las peticiones ajax
 Route::get('/planta/{id}/areas','AreasController@areas_plantas');
 Route::get('/area/{id}/equipos','EquiposController@equipos_areas');
+Route::get('/area/{id}/equiposPadres','EquiposController@equipos_padres');
 // rutas para cargar las tarjetas creadas y asignadas a un usuario
 Route::get('/mis-tarjetas', 'TarjetasController@mis_tarjetas');
 Route::get('/tarjetas-asignadas', 'TarjetasController@tarjetas_asignadas');
