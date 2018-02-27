@@ -26,6 +26,7 @@
           <th>Id</th>
           <th>Nombre</th>
           <th>Area</th>
+          <th>Padre</th>
           <th>Opciones</th>
         </thead>
 
@@ -34,9 +35,12 @@
           <td>{{$equipo->id}}</td>
           <td>{{$equipo->nombre}}</td>
           <td>{{$equipo->area->nombre}}</td>
-
+        <td>  @if ($equipo->padre==1)
+          <i class="ace-icon fa fa-check bigger-200"></i>
+        </td>
+          @endif
           <td>
-            <div class="hidden-sm hidden-xs action-buttons">
+            <div class="action-buttons">
               <a class="blue" href="#">
                 <i class="ace-icon fa fa-search-plus bigger-200"></i>
               </a>
@@ -44,10 +48,12 @@
               <a class="green" href="{{URL::action('EquiposController@edit',$equipo->id)}}">
                 <i class="ace-icon fa fa-pencil bigger-200"></i>
               </a>
-
+              @can('borrar')
               <a class="red" href="" data-target="#modal-delete-{{$equipo->id}}" data-toggle="modal">
                 <i class="ace-icon fa fa-trash-o bigger-200"></i>
               </a>
+              @else
+              @endcan
             </div>
 
           </td>

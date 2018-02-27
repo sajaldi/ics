@@ -3,10 +3,12 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>{{ config('app.name', 'Laravel') }}</title>
+		<title>Digital</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<!-- bootstrap & fontawesome -->
 
@@ -21,25 +23,10 @@
 		<!-- ace styles -->
 		<link rel="stylesheet" href="{{asset('assets/css/ace.min.css')}}" class="ace-main-stylesheet" id="main-ace-style">
 
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-		<![endif]-->
-
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
 		<!-- ace settings handler -->
 		<script src="{{asset('assets/js/ace-extra.min.js')}}"></script>
 
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
 	</head>
 
 	<body class="no-skin">
@@ -63,7 +50,7 @@
 					<a href="/" class="navbar-brand">
 						<small>
 							<i class="fa fa"></i>
-							Sistema de Tarjetas Unilever
+							Sistema de Tarjetas Unilever Comayagua
 						</small>
 					</a>
 				</div>
@@ -75,7 +62,7 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<!--<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">-->
-									<small>Bienvenido {{ Auth::user()->nombre }}</small>
+									<small>Bienvenido {{ Auth::user()->name }}</small>
 
 								<i class="ace-icon fa fa-caret-down"></i>
 							</a>
@@ -127,31 +114,11 @@
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
+						<style media="screen">
+							.logoU { position:relative top: 5px; left: 10px; padding: 5px; float:none; width: 95px; }
+						</style>
 
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
-
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
-
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
+							<img class="logoU" src="{{asset('images/logo.png')}}" id="logo">
 					</div>
 				</div><!-- /.sidebar-shortcuts -->
 
@@ -167,7 +134,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-tag"></i>
+							<i class="menu-icon fa fa-tags"></i>
 							<span class="menu-text">
 								Tarjetas
 							</span>
@@ -180,25 +147,25 @@
 							<li class="">
 								<a href="/tarjetas">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Listado de Tarjetas
+									Listado de todas las Tarjetas
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="">
+								<a href="/mis-tarjetas">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Crear Nueva
+									Mis Tarjetas Realizadas
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="">
+								<a href="/tarjetas-asignadas">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Reportes de Tarjetas
+									Mis Tarjetas Asignadas
 								</a>
 
 								<b class="arrow"></b>
@@ -237,7 +204,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<i class="menu-icon fa fa-gavel"></i>
 							<span class="menu-text"> Equipos </span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -283,7 +250,7 @@
 							</li>
 
 							<li class="">
-								<a href="/categoria/create">
+								<a href="/categorias/create">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Crear una Categoria
 								</a>
@@ -294,7 +261,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
+							<i class="menu-icon fa fa-th"></i>
 							<span class="menu-text">Eventos</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -351,7 +318,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
+							<i class="menu-icon fa fa-tasks"></i>
 							<span class="menu-text">Plantas</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -380,7 +347,7 @@
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
+							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text">Empleados</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -389,15 +356,15 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="/empleados">
+								<a href="/users">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Lista de Empleados
+									Lista de Usuarios
 								</a>
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="/empleados/create">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Crear Nuevo Empleado
 								</a>
@@ -460,7 +427,7 @@
 					<div class="footer-content">
 						<span class="bigger-120">
 							<span class="blue bolder"></span>
-							Copyright ©  2018
+							Copyright ©   2018
 						</span>
 
 						&nbsp; &nbsp;
@@ -501,7 +468,6 @@
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>-->
 
-
 		<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 		<script src="{{asset('assets/js/jquery-ui.custom.min.js')}}"></script>
 		<script src="{{asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>
@@ -512,13 +478,13 @@
 		<script src="{{asset('assets/js/jquery.flot.resize.min.js')}}"></script>
 
 		<!-- page specific plugin scripts -->
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
-		<script src="assets/js/dataTables.tableTools.min.js"></script>
-		<script src="assets/js/dataTables.colVis.min.js"></script>
+		<script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
+		<script src="{{asset('assets/js/jquery.dataTables.bootstrap.min.js')}}"></script>
+		<script src="{{asset('assets/js/dataTables.tableTools.min.js')}}"></script>
+		<script src="{{asset('assets/js/dataTables.colVis.min.js')}}"></script>
 
 		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
 		<script src="{{asset('assets/js/ace.min.js')}}"></script>
 @yield('scripts')
 	</body>

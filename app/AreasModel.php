@@ -8,7 +8,7 @@ class AreasModel extends Model
 {
 
   protected $table='areas';
-  protected $fillable= ['nombre','planta_id'];
+  protected $fillable= ['nombre','planta_id','subArea'];
   //protected $primaryKey= "idCategoria";
 
   public $timestamps=false;

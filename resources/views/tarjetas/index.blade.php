@@ -5,22 +5,29 @@
 .color-etiquetas{ background-color:green;}
 </style>
 
-
+<br>
 
 <div class="col-lg-3">
   <a href=""data-target="#modal-create-tarjeta" data-toggle="modal"> <button class="btn btn-info">Nueva</button></a>
 </div>
-
+<div class="col-lg-4">
+@if(Session::has('message'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  {{Session::get('message')}}
+</div>
+@endif
+</div>
 
 <div class="row">
 <div class="col-xs-12">
-  <h3 class="header smaller lighter blue">Listado de Tarjetas Realizadas</h3>
+  <h3 class="header smaller lighter blue">Listado de Todas las Tarjetas</h3>
   <div class="clearfix">
     <div class="pull-right tableTools-container"></div>
   </div>
 
   <div class="table-header">
-    Listado de tarjetas realizadas"
+    Listado de todas las tarjetas"
   </div>
 <div class="table-responsive">
 
@@ -41,7 +48,6 @@
           {{--<th>Solucion</th>
           <th>Fecha cierre</th>--}}
           <th>Finalizado</th>
-          <th>Estatus</th>
           <th>Opciones</th>
         </thead>
 
@@ -52,7 +58,7 @@
           <td>{{$t->area->nombre}}</td>
           <td>{{$t->planta->nombre}}</td>
           <td>{{$t->created_at}}</td>
-          {{--<td>{{$t->empleado->nombre}}</td>--}}
+          {{--<td>{{$t->user->name}}</td>--}}
           <td>{{$t->equipo->nombre}}</td>
           {{--<td>{{$t->turno}}</td>--}}
           <td>{{$t->prioridad}}</td>
@@ -62,21 +68,23 @@
           <td>{{$t->descripcion_reporte}}</td>
           {{--<td>{{$t->solucion_implementada}}</td>
           <td>{{$t->fecha_cierre}}</td>--}}
-          <td>{{$t->finalizado}}</td>
           <td><span class="label label-sm label-success">{{$t->status}}</span>
           </td>
           <td>
-            <div class="hidden-sm hidden-xs action-buttons">
+            <div class="action-buttons">
               <a class="blue" href="{{URL::action('TarjetasController@show',$t->id)}}">
                 <i class="ace-icon fa fa-eye bigger-200"></i>
               </a>
               <a class="green" href="#">
                 <i class="ace-icon fa fa-pencil bigger-200"></i>
               </a>
-
+              @can('borrar')
               <a class="red" href="" data-target="#modal-delete-{{$t->id}}" data-toggle="modal">
                 <i class="ace-icon fa fa-trash-o bigger-200"></i>
               </a>
+              @else
+              @endcan
+
             </div>
           </td>
         </tr>
@@ -173,6 +181,8 @@
                 print this table.\
                 <br />Press <b>escape</b> when finished.</p>",
         }
+
+
           ]
       } );
     //we put a container before our table and append TableTools element to it
