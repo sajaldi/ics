@@ -18,7 +18,11 @@
         <thead>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Opciones</th>
+          <th>Opciones  &nbsp;
+            <a class="blue" href="#" data-target="#modal-rol" data-toggle="modal">
+              <i class="ace-icon fa fa-search-plus bigger-200"></i>
+            </a>
+          </th>
         </thead>
 
         @foreach ($roles as $rol)
@@ -27,9 +31,6 @@
           <td>{{$rol->name}}</td>
           <td>
             <div class="action-buttons">
-              <a class="blue" href="#" data-target="#modal-rol" data-toggle="modal">
-                <i class="ace-icon fa fa-search-plus bigger-200"></i>
-              </a>
 
               <a class="blue" href="#" data-target="#" data-toggle="modal">
                 <i class="ace-icon fa fa-eye bigger-200"></i>
@@ -60,7 +61,11 @@
       <thead>
         <th>Id</th>
         <th>Nombre</th>
-        <th>Opciones</th>
+        <th>Opciones &nbsp;
+          <a class="blue" href="#" data-target="#modal-permiso" data-toggle="modal">
+          <i class="ace-icon fa fa-search-plus bigger-200"></i>
+          </a>
+        </th>
       </thead>
 
       @foreach ($permisos as $p)
@@ -69,9 +74,6 @@
         <td>{{$p->name}}</td>
         <td>
           <div class="action-buttons">
-              <a class="blue" href="#" data-target="#modal-permiso" data-toggle="modal">
-              <i class="ace-icon fa fa-search-plus bigger-200"></i>
-            </a>
 
             <a class="green" href="">
               <i class="ace-icon fa fa-pencil bigger-200"></i>
